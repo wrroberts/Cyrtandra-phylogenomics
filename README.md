@@ -1,7 +1,8 @@
 # Hawaiian _Cyrtandra_ phylogenomics
-## Scripts and code for Kleinkopf et al. Diversification of Hawaiian _Cyrtandra_ under the influence of incomplete lineage sorting and hybridization.
+## Scripts and code for:
+### Kleinkopf JA, Roberts WR, Wagner WL, Roalson EH. 2019. Diversification of Hawaiian _Cyrtandra_ (Gesneriaceae) under the influence of incomplete lineage sorting and hybridization. _Journal of Systematics and Evolution_. [DOI](https://doi.org/10.1111/jse.12519)
 
-## Programs used for analyses:
+## Programs and languages used for analyses:
 ##### Java
 ##### Python
 ##### R
@@ -15,6 +16,7 @@
 ##### [PhyloNetworks](https://github.com/crsl4/PhyloNetworks.jl)
 ##### [PhyloNet](https://bioinfocs.rice.edu/PhyloNet)
 ##### [HYBRIDCHECK](https://github.com/BenJWard/HybridCheck)
+##### [PyCogent](https://github.com/pycogent/pycogent)
 
 ### Trimming the raw fastq files
 ##### Reads were trimmed separately for each read file for each sample using paired-end mode in Trimmomatic v.0.36.
@@ -84,7 +86,9 @@ net4 = snaq!(net3, raxmlCF, hmax=4, filename="net4_raxml", seed=12345)
 ##### Using PhyloNet v.3.6.4 and maximum pseudo-likelihood
 ##### The same approach as above was used and analyses were performed over each of the 3 island groups.
 ##### The following commands were used in each nexus file: 
-##### InferNetwork_MPL geneTreeList numReticulations -s startingTopology -po -x 10 -pl 12
+```
+InferNetwork_MPL geneTreeList numReticulations -s startingTopology -po -x 10 -pl 12
+```
 ```java
 # estimate the best network using from 0 to 4 allowed reticulations
 java -jar PhyloNet_3.6.4.jar net0.nex
@@ -96,7 +100,7 @@ java -jar PhyloNet_3.6.4.jar net4.nex
 
 ### ABBA-BABA tests for gene flow
 ##### The R package HYBRIDCHECK was used to calculate statistics in predefined 4-population phylogenies to test for gene flow.
-##### Analyses were performed as below using concatenated alignments for each island group. Any columns with gaps were removed.
+##### Analyses were performed as below using concatenated alignments for each island group. All columns with gaps were removed using PyCogent.
 ```R
 require(HybridCheck)
 
