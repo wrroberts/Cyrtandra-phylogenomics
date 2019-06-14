@@ -101,6 +101,13 @@ java -jar PhyloNet_3.6.4.jar net4.nex
 ### ABBA-BABA tests for gene flow
 ##### The R package HYBRIDCHECK was used to calculate statistics in predefined 4-population phylogenies to test for gene flow.
 ##### Analyses were performed as below using concatenated alignments for each island group. All columns with gaps were removed using PyCogent.
+```Python
+from cogent3 import LoadSeqs
+aln = LoadSeqs('Kauai-concat.fa')
+degapped = aln.degap()
+aln.write('Kauai-concat.NOGAPS.fa')
+```
+##### Perform ABBA-BABA tests using the R package HYBRIDCHECK
 ```R
 require(HybridCheck)
 
