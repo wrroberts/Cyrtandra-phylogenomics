@@ -2,6 +2,8 @@
 ## Scripts and code for:
 ### Kleinkopf JA, Roberts WR, Wagner WL, Roalson EH. 2019. Diversification of Hawaiian _Cyrtandra_ (Gesneriaceae) under the influence of incomplete lineage sorting and hybridization. _Journal of Systematics and Evolution_. [DOI](https://doi.org/10.1111/jse.12519)
 
+### UPDATE 2022: The correct taxon names for gene tree tip labels are located in `cyrtandra_gene-tree_full-names.csv`.
+
 ## Programs and languages used for analyses:
 ##### Java
 ##### Python
